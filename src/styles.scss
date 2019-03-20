@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  justify-content: center;
+}
+
+#rt-logout-button {
+  display: block;
+  margin: 0 auto;
+}
+
+#rt-user-container {
+  width: 40%;
+  margin: auto;
+}
+
+#rt-authentication-error {
+  text-align: center;
+}
