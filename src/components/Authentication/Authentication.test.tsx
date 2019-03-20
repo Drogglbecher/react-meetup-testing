@@ -1,19 +1,19 @@
 import React from 'react';
 import {Authentication} from './Authentication';
-import {mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('Authentication', () => {
   let wrapper;
-  let onSubmitCredentialSpy = jest.fn();
+  let submitCredentialSpy = jest.fn();
 
   beforeAll(() => {
-    wrapper = mount(
-      <Authentication error="" onSubmitCredentials={onSubmitCredentialSpy} />,
+    wrapper = shallow(
+      <Authentication error="" onSubmitCredentials={submitCredentialSpy} />,
     );
   });
 
   beforeEach(() => {
-    onSubmitCredentialSpy.mockReset();
+    submitCredentialSpy.mockReset();
   });
 
   it('should be rendered', () => {
@@ -24,10 +24,13 @@ describe('Authentication', () => {
   });
 
   it('should call onSubmitCredentials when handleSubmit is emitted', () => {
+    // Given
+    const credentials = {username: 'user', password: 'password'};
+
     // When
-    wrapper.instance().handleSubmit('peter', 'binder');
+    wrapper.find('Formik').simulate('submit', {values: credentials});
 
     // Then
-    expect(wrapper.props().onSubmitCredentials).toHaveBeenCalled();
+    expect(submitCredentialSpy).toHaveBeenCalled();
   });
 });

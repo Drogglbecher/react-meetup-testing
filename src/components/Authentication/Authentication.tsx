@@ -21,9 +21,6 @@ export class Authentication extends React.Component<Props, State> {
     password: '',
   };
 
-  handleSubmit = (username: string, password: string) =>
-    this.props.onSubmitCredentials(username, password);
-
   renderError = () => {
     const {error} = this.props;
 
@@ -38,7 +35,7 @@ export class Authentication extends React.Component<Props, State> {
       <Formik
         initialValues={this.state}
         onSubmit={(values: State) =>
-          this.handleSubmit(values.username, values.password)
+          this.props.onSubmitCredentials(values.username, values.password)
         }
         render={() => (
           <Form>

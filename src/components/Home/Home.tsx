@@ -7,12 +7,8 @@ type Props = {
 };
 
 export class Home extends React.Component<Props> {
-  handleLogout = () => {
-    this.props.onLogout();
-  };
-
   render() {
-    const {username} = this.props;
+    const {username, onLogout} = this.props;
 
     return (
       <>
@@ -20,7 +16,7 @@ export class Home extends React.Component<Props> {
         <br />
         <div id="rt-user-container">{`Hi, ${username}`}</div>
         <br />
-        <button id="rt-logout-button" onClick={this.handleLogout}>
+        <button id="rt-logout-button" onClick={() => onLogout()}>
           LOGOUT
         </button>
       </>
