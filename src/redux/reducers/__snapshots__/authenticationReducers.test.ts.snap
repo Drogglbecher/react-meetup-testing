@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication Reducers should set \`authenticated\` to false when a \`Logout\` action is dispatched 1`] = `
+Object {
+  "authenticated": false,
+  "error": "",
+  "username": "",
+}
+`;
+
+exports[`Authentication Reducers should set \`error\` and \`user\` to null when a \`Failed\` action is dispatched 1`] = `
+Object {
+  "authenticated": false,
+  "error": "Nix gut.",
+  "username": "",
+}
+`;
+
+exports[`Authentication Reducers should set \`user\` and \`authenticated\` to true when a \`SubmitCredentialsSuccess\` action is dispatched 1`] = `
+Object {
+  "authenticated": true,
+  "error": "",
+  "username": "user",
+}
+`;
+
+exports[`Authentication Reducers should set initial state 1`] = `
+Object {
+  "authenticated": false,
+  "error": "",
+  "username": "",
+}
+`;
