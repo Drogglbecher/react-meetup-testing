@@ -6,10 +6,15 @@ describe('App', () => {
   let wrapper;
 
   beforeAll(() => {
-    wrapper = shallow(<App authenticated={false} />);
+    wrapper = shallow(<App authenticated={true} />);
   });
 
   it('should be rendered', () => {
-    expect(wrapper.find('PublicRoute').props.authed).toBeFalsy();
+    expect(
+      wrapper
+        .find('PublicRoute')
+        .at(0)
+        .props().authed,
+    ).toBeTruthy();
   });
 });
