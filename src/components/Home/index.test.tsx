@@ -11,13 +11,13 @@ describe('ConnectedAuthentication', () => {
   const mockStore = configureMockStore([thunk]);
 
   beforeEach(() => {
-    const initialState = {authentication: {username: 'peter'}};
+    const initialState = {authentication: {username: 'user'}};
     store = mockStore(initialState);
     wrapper = shallow(<HomeContainer store={store} />);
   });
 
   it('mapStateToProps', () => {
-    expect(wrapper.props().username).toEqual('peter');
+    expect(wrapper.props().username).toEqual('user');
   });
 
   it('mapDispatchToProps', () => {

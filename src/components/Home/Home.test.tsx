@@ -7,7 +7,7 @@ describe('Authentication', () => {
   let logoutSpy = jest.fn();
 
   beforeAll(() => {
-    wrapper = shallow(<Home username="peter" onLogout={logoutSpy} />);
+    wrapper = shallow(<Home username="user" onLogout={logoutSpy} />);
   });
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('Authentication', () => {
 
   it('should be rendered', () => {
     // Then
-    expect(wrapper.find('#rt-user-container').text()).toEqual('Hi, peter');
+    expect(wrapper.find('#rt-user-container').text()).toEqual('Hi, user');
   });
 
   it('should call logout when button is clicked', () => {
