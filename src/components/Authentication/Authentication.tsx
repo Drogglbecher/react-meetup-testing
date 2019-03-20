@@ -33,38 +33,36 @@ export class Authentication extends React.Component<Props, State> {
     return <div />;
   };
 
-  render = () => {
-    return (
-      <>
-        <Formik
-          initialValues={this.state}
-          onSubmit={(values: State) =>
-            this.handleSubmit(values.username, values.password)
-          }
-          render={() => (
-            <Form>
-              <label htmlFor="username">Username</label>
-              <Field
-                id="rt-authentication-username-input"
-                autoComplete="rt-authentication-username"
-                name="username"
-                type="text"
-              />
+  render = () => (
+    <>
+      <Formik
+        initialValues={this.state}
+        onSubmit={(values: State) =>
+          this.handleSubmit(values.username, values.password)
+        }
+        render={() => (
+          <Form>
+            <label htmlFor="username">Username</label>
+            <Field
+              id="rt-authentication-username-input"
+              autoComplete="rt-authentication-username"
+              name="username"
+              type="text"
+            />
 
-              <label htmlFor="password">Password</label>
-              <Field
-                id="rt-authentication-password-input"
-                autoComplete="rt-authentication-password"
-                name="password"
-                type="password"
-              />
+            <label htmlFor="password">Password</label>
+            <Field
+              id="rt-authentication-password-input"
+              autoComplete="rt-authentication-password"
+              name="password"
+              type="password"
+            />
 
-              <button type="submit">Submit</button>
-            </Form>
-          )}
-        />
-        {this.renderError()}
-      </>
-    );
-  };
+            <button type="submit">Submit</button>
+          </Form>
+        )}
+      />
+      {this.renderError()}
+    </>
+  );
 }
